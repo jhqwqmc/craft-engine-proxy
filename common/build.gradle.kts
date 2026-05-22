@@ -24,6 +24,6 @@ dependencies {
 }
 
 tasks.named("build") {
-    dependsOn(":proxy:velocity:build")
-    dependsOn(":proxy:bungeecord:build")
+    dependsOn(":velocity:build")
+    dependsOn(":bungeecord:build")
 }
