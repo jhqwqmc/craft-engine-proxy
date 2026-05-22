@@ -2,14 +2,6 @@ import net.momirealms.adventure
 import net.momirealms.nbt
 import net.momirealms.netty
 
-repositories {
-    mavenCentral()
-    maven("https://jitpack.io/")
-    maven("https://libraries.minecraft.net/")
-    maven("https://repo.momirealms.net/releases/")
-    maven("https://repo.gtemc.net/releases/")
-}
-
 dependencies {
     nbt(project, JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME)
     netty(project, JavaPlugin.COMPILE_ONLY_CONFIGURATION_NAME)

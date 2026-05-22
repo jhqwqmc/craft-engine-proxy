@@ -86,7 +86,7 @@ public final class VelocityPacketListenerManager extends PacketListenerManager {
         // Netty channel 早于 Velocity player 创建, 登录后再绑定玩家对象
         ChannelConnection connection = this.connectionsByAddress.get(event.getPlayer().getRemoteAddress());
         if (connection == null) {
-            event.getPlayer().disconnect(Component.text("[CraftEngine-Proxy] Can't initialize ChannelConnection for " + event.getPlayer().getUsername()));
+            event.getPlayer().disconnect(Component.text("[CraftEngine] Can't initialize ChannelConnection for " + event.getPlayer().getUsername()));
             this.plugin.logger.error("Can't initialize ChannelConnection for {}", event.getPlayer().getUsername());
             return;
         }
