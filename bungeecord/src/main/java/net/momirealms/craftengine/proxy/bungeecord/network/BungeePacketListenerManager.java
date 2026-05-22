@@ -88,7 +88,7 @@ public class BungeePacketListenerManager extends PacketListenerManager implement
         // Netty channel 早于 Bungee player 创建, 登录后再绑定玩家对象
         ChannelConnection connection = this.connectionsByAddress.get(event.getPlayer().getSocketAddress());
         if (connection == null) {
-            event.getPlayer().disconnect(new TextComponent("[CraftEngine-Proxy] Can't initialize ChannelConnection for " + event.getPlayer().getDisplayName()));
+            event.getPlayer().disconnect(new TextComponent("[CraftEngine] Can't initialize ChannelConnection for " + event.getPlayer().getDisplayName()));
             this.plugin.getLogger().severe("Can't initialize ChannelConnection for " + event.getPlayer().getDisplayName());
             return;
         }

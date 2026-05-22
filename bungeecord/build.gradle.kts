@@ -1,16 +1,8 @@
 import net.momirealms.netty
 
 plugins {
+    id("xyz.jpenilla.run-waterfall") version "3.0.2"
     id("net.minecrell.plugin-yml.bungee") version "0.6.0"
-}
-
-repositories {
-    mavenCentral()
-    maven("https://jitpack.io/")
-    maven("https://libraries.minecraft.net/")
-    maven("https://repo.momirealms.net/releases/")
-    maven("https://repo.gtemc.net/releases/")
-    maven("https://repo.papermc.io/repository/maven-public/")
 }
 
 dependencies {
@@ -22,6 +14,11 @@ dependencies {
 }
 
 tasks {
+    runWaterfall {
+        waterfallVersion(rootProject.properties["waterfall_version"] as String)
+        jvmArgs("-Dsun.stdout.encoding=UTF-8", "-Dsun.stderr.encoding=UTF-8")
+    }
+
     shadowJar {
         relocation.applyProxy(this)
         archiveFileName = "${rootProject.name}-bungeecord-plugin-${rootProject.properties["project_version"]}.jar"
